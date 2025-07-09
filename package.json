@@ -1,0 +1,65 @@
+{
+	"name": "n8n-nodes-gbplabs-chat-buffer",
+	"version": "1.0.13",
+	"description": "Nodo n8n para buffer temporal de mensajes de chat con timeout configurable",
+	"keywords": [
+		"n8n-community-node-package",
+		"n8n",
+		"chat",
+		"buffer",
+		"messaging",
+		"temporal",
+		"timeout"
+	],
+	"license": "MIT",
+	"homepage": "https://github.com/gbplabs/gblabs-n8n-buffer",
+	"author": {
+		"name": "Pablo Luis Sánchez Stahslchsmidt",
+		"email": "gbplabs@gmail.com"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/gbplabs/gblabs-n8n-buffer.git"
+	},
+	"engines": {
+		"node": ">=18.10",
+		"pnpm": ">=8.6"
+	},
+	"packageManager": "pnpm@8.6.2",
+	"main": "index.js",
+	"scripts": {
+		"build": "tsc && cp nodes/ChatBuffer/nodes/ChatBuffer/chatbuffer.svg dist/nodes/ChatBuffer/nodes/ChatBuffer/",
+		"dev": "tsc --watch",
+		"format": "prettier nodes --write",
+		"lint": "eslint nodes package.json",
+		"lintfix": "eslint nodes package.json --fix",
+		"prepublishOnly": "npm run build && npm run lint -c .eslintrc.js nodes"
+	},
+	"files": [
+		"dist/nodes/ChatBuffer/",
+		"chatbuffer.svg",
+		"LICENSE.md",
+		"README.md",
+		"index.js"
+	],
+	"n8n": {
+		"n8nNodesApiVersion": 1,
+		"credentials": [],
+		"nodes": [
+			"dist/nodes/ChatBuffer/nodes/ChatBuffer/ChatBuffer.node.js"
+		]
+	},
+	"devDependencies": {
+		"@types/node": "^18.16.16",
+		"@typescript-eslint/parser": "^5.59.8",
+		"eslint": "^8.42.0",
+		"eslint-plugin-n8n-nodes-base": "^1.11.0",
+		"gulp": "^4.0.2",
+		"n8n-workflow": "^1.0.0",
+		"prettier": "^2.8.8",
+		"typescript": "^5.1.3"
+	},
+	"dependencies": {
+		"n8n-nodes-gbplabs-text-replacer": "file:nodes/ChatBuffer"
+	}
+}
