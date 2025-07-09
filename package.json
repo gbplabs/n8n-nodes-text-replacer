@@ -1,6 +1,6 @@
 {
 	"name": "n8n-nodes-text-replacer",
-	"version": "1.0.0",
+	"version": "1.0.2",
 	"description": "Nodo n8n para reemplazar múltiples placeholders en texto de forma simple y eficiente",
 	"keywords": [
 		"n8n-community-node-package",
@@ -14,7 +14,7 @@
 	"license": "MIT",
 	"homepage": "https://github.com/gbplabs/n8n-nodes-text-replacer",
 	"author": {
-		"name": "Pablo Luis Sánchez Stahslchsmidt",
+		"name": "Pablo Luis Sánchez Stahlschmidt",
 		"email": "gbplabs@gmail.com"
 	},
 	"repository": {
@@ -28,16 +28,16 @@
 	"packageManager": "pnpm@8.6.2",
 	"main": "index.js",
 	"scripts": {
-		"build": "tsc && cp nodes/TextReplacer/*.svg dist/nodes/TextReplacer/ 2>/dev/null || true",
+		"build": "tsc && cp nodes/TextReplacer/*.svg dist/nodes/TextReplacer/",
 		"dev": "tsc --watch",
 		"format": "prettier nodes --write",
 		"lint": "eslint nodes package.json",
 		"lintfix": "eslint nodes package.json --fix",
-		"prepublishOnly": "npm run build && npm run lint -c .eslintrc.js nodes"
+		"prepublishOnly": "npm run build && npm run lint"
 	},
 	"files": [
 		"dist/nodes/TextReplacer/",
-		"textreplacer.svg",
+		"nodes/TextReplacer/textReplace.svg",
 		"LICENSE.md",
 		"README.md",
 		"index.js"

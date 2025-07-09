@@ -18,7 +18,6 @@ export class TextReplacer implements INodeType {
 		description: 'Reemplaza placeholders definidos por el usuario en un texto de entrada con valores dinámicos',
 		defaults: {
 			name: 'Text Replacer',
-			color: '#772244',
 		},
 		inputs: [NodeConnectionType.Main],
 		outputs: [NodeConnectionType.Main],
