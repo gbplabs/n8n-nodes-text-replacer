@@ -1,25 +1,25 @@
 {
-	"name": "n8n-nodes-gbplabs-chat-buffer",
-	"version": "1.0.13",
-	"description": "Nodo n8n para buffer temporal de mensajes de chat con timeout configurable",
+	"name": "n8n-nodes-text-replacer",
+	"version": "1.0.0",
+	"description": "Nodo n8n para reemplazar múltiples placeholders en texto de forma simple y eficiente",
 	"keywords": [
 		"n8n-community-node-package",
 		"n8n",
-		"chat",
-		"buffer",
-		"messaging",
-		"temporal",
-		"timeout"
+		"text",
+		"replace",
+		"placeholder",
+		"transform",
+		"string"
 	],
 	"license": "MIT",
-	"homepage": "https://github.com/gbplabs/gblabs-n8n-buffer",
+	"homepage": "https://github.com/gbplabs/n8n-nodes-text-replacer",
 	"author": {
 		"name": "Pablo Luis Sánchez Stahslchsmidt",
 		"email": "gbplabs@gmail.com"
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/gbplabs/gblabs-n8n-buffer.git"
+		"url": "git+https://github.com/gbplabs/n8n-nodes-text-replacer.git"
 	},
 	"engines": {
 		"node": ">=18.10",
@@ -28,7 +28,7 @@
 	"packageManager": "pnpm@8.6.2",
 	"main": "index.js",
 	"scripts": {
-		"build": "tsc && cp nodes/ChatBuffer/nodes/ChatBuffer/chatbuffer.svg dist/nodes/ChatBuffer/nodes/ChatBuffer/",
+		"build": "tsc && cp nodes/TextReplacer/*.svg dist/nodes/TextReplacer/ 2>/dev/null || true",
 		"dev": "tsc --watch",
 		"format": "prettier nodes --write",
 		"lint": "eslint nodes package.json",
@@ -36,8 +36,8 @@
 		"prepublishOnly": "npm run build && npm run lint -c .eslintrc.js nodes"
 	},
 	"files": [
-		"dist/nodes/ChatBuffer/",
-		"chatbuffer.svg",
+		"dist/nodes/TextReplacer/",
+		"textreplacer.svg",
 		"LICENSE.md",
 		"README.md",
 		"index.js"
@@ -46,7 +46,7 @@
 		"n8nNodesApiVersion": 1,
 		"credentials": [],
 		"nodes": [
-			"dist/nodes/ChatBuffer/nodes/ChatBuffer/ChatBuffer.node.js"
+			"dist/nodes/TextReplacer/TextReplacer.node.js"
 		]
 	},
 	"devDependencies": {
@@ -59,7 +59,7 @@
 		"prettier": "^2.8.8",
 		"typescript": "^5.1.3"
 	},
-	"dependencies": {
-		"n8n-nodes-gbplabs-text-replacer": "file:nodes/ChatBuffer"
+	"peerDependencies": {
+		"n8n-workflow": "*"
 	}
 }

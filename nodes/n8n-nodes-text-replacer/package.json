@@ -1,5 +1,5 @@
 {
-	"name": "n8n-nodes-gbplabs-text-replacer",
+	"name": "n8n-nodes-text-replacer",
 	"version": "1.0.0",
 	"description": "n8n node para reemplazar múltiples placeholders en texto con valores dinámicos",
 	"keywords": [

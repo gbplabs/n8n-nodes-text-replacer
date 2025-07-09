@@ -143,7 +143,7 @@ install_text_replacer_node() {
     log "Creando paquete npm..."
     npm pack > /dev/null 2>&1
     
-    local package_file=$(ls n8n-nodes-gbplabs-text-replacer-*.tgz | head -1)
+    local package_file=$(ls n8n-nodes-text-replacer-*.tgz | head -1)
     
     if [ ! -f "$package_file" ]; then
         error "No se pudo crear el paquete npm"
@@ -162,7 +162,7 @@ install_text_replacer_node() {
     
     # Verificar instalación
     log "Verificando instalación..."
-    if docker exec "$container_name" sh -c "cd /home/node/.n8n/nodes && npm list n8n-nodes-gbplabs-text-replacer" > /dev/null 2>&1; then
+    if docker exec "$container_name" sh -c "cd /home/node/.n8n/nodes && npm list n8n-nodes-text-replacer" > /dev/null 2>&1; then
         success "Nodo Text Replacer instalado correctamente"
     else
         error "Error en la verificación de la instalación"
@@ -198,26 +198,13 @@ install_text_replacer_node() {
     info "• inputText: Texto con placeholders a reemplazar"
     info "• outputKey: Nombre de la key de salida (default: 'processedText')"
     info "• replacements: Collection de grupos placeholder/replacer"
-    echo ""
-    info "Funcionalidades del nodo ChatBuffer:"
-    info "• Buffer temporal automático de mensajes"
-    info "• Concatenación automática después del timeout"
-    info "• Timeout configurable (default: 3000ms)"
-    info "• Separador configurable (default: '. ')"
-    echo ""
-    info "Parámetros de entrada ChatBuffer:"
-    info "• sessionId: ID de la sesión"
-    info "• message: Mensaje a agregar al buffer"
-    info "• timeout: Tiempo de espera en ms"
-    info "• separator: Separador para concatenar mensajes"
-    echo ""
-    success "¡Puedes encontrar ambos nodos en la categoría 'Transform'!"
+    success "¡Puedes encontrar el nodo en la categoría 'Transform'!"
     echo ""
 }
 
 # Función de desinstalación
 uninstall_text_replacer_node() {
-    log "=== Desinstalación de los nodos Text Replacer y ChatBuffer ==="
+    log "=== Desinstalación del nodo Text Replacer ==="
     echo ""
     
     # Mostrar contenedores disponibles
@@ -244,8 +231,8 @@ uninstall_text_replacer_node() {
     
     # Desinstalar el nodo
     log "Desinstalando nodo del contenedor..."
-    if docker exec "$container_name" sh -c "cd /home/node/.n8n/nodes && npm uninstall n8n-nodes-gbplabs-text-replacer" > /dev/null 2>&1; then
-        success "Nodos Text Replacer y ChatBuffer desinstalados"
+    if docker exec "$container_name" sh -c "cd /home/node/.n8n/nodes && npm uninstall n8n-nodes-text-replacer" > /dev/null 2>&1; then
+        success "Nodo Text Replacer desinstalado"
     else
         warning "El nodo no estaba instalado o ya fue desinstalado"
     fi
@@ -261,23 +248,22 @@ uninstall_text_replacer_node() {
 
 # Función de ayuda
 show_help() {
-    echo -e "${CYAN}Instalador Interactivo de los nodos Text Replacer y ChatBuffer para n8n${NC}"
+    echo -e "${CYAN}Instalador Interactivo del nodo Text Replacer para n8n${NC}"
     echo ""
     echo "Uso: $0 [OPCIÓN]"
     echo ""
     echo "Opciones:"
-    echo "  install     Instalar los nodos Text Replacer y ChatBuffer (por defecto)"
-    echo "  uninstall   Desinstalar los nodos Text Replacer y ChatBuffer"
+    echo "  install     Instalar el nodo Text Replacer (por defecto)"
+    echo "  uninstall   Desinstalar el nodo Text Replacer"
     echo "  help        Mostrar esta ayuda"
     echo ""
     echo "Ejemplos:"
-    echo "  $0              # Instalar los nodos (modo interactivo)"
-    echo "  $0 install      # Instalar los nodos (modo interactivo)"
-    echo "  $0 uninstall    # Desinstalar los nodos (modo interactivo)"
+    echo "  $0              # Instalar el nodo (modo interactivo)"
+    echo "  $0 install      # Instalar el nodo (modo interactivo)"
+    echo "  $0 uninstall    # Desinstalar el nodo (modo interactivo)"
     echo ""
-    echo "Nodos incluidos:"
+    echo "Nodo incluido:"
     echo "• Text Replacer - Reemplaza múltiples placeholders en texto"
-    echo "• ChatBuffer - Buffer temporal automático de mensajes"
     echo ""
     echo "Características:"
     echo "• Detección automática de contenedores Docker"

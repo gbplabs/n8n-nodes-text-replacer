@@ -1,15 +1,2 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <!-- Documento de texto -->
-  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-  <polyline points="14,2 14,8 20,8"/>
-  
-  <!-- Líneas de texto con placeholders -->
-  <line x1="8" y1="12" x2="16" y2="12"/>
-  <line x1="8" y1="15" x2="14" y2="15"/>
-  
-  <!-- Símbolo de reemplazo (flecha circular) -->
-  <path d="M17 1l4 4-4 4"/>
-  <path d="M3 11V9a4 4 0 0 1 4-4h14"/>
-  <path d="M7 23l-4-4 4-4"/>
-  <path d="M21 13v2a4 4 0 0 1-4 4H3"/>
-</svg> 
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-0.097 -18.801 167.274 106.271" xmlns:bx="https://boxy-svg.com" width="167.274px" height="106.271px"><defs><bx:export><bx:file format="svg"/></bx:export></defs><text style="fill: rgb(255, 254, 254); font-family: Arial, sans-serif; font-size: 28px; font-style: italic; font-weight: 700; stroke: rgb(47, 47, 47); text-anchor: middle; text-transform: uppercase; white-space: pre;" transform="matrix(1, 0, 0, 1, -6.747462, -75.89978)"><tspan x="90.713" y="68.846" dy="1em">​</tspan><tspan x="90.713" dy="1em">​</tspan><tspan style="stroke: rgb(191, 118, 118);">TxT</tspan><tspan x="90.713" dy="1em">​</tspan><tspan>Replace</tspan></text><text style="fill: rgb(145, 5, 217); font-family: Roboto; font-size: 36px; font-weight: 700; stroke: rgb(109, 57, 135); white-space: pre;" x="9.7" y="16.669">GBPLabs</text></svg>

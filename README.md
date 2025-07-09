@@ -97,13 +97,18 @@ Output: "Hola María, esperamos que María tenga un buen día. Hola!"
 
 ## Instalación
 
+### Desde npm (Recomendado)
+```bash
+npm install n8n-nodes-text-replacer
+```
+
+### Desarrollo Local
 ```bash
 ./install.sh
 ```
 
 O manualmente:
 ```bash
-cd nodes/n8n-nodes-text-replacer
 npm install
 npm run build
 npm pack
